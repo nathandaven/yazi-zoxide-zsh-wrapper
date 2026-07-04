@@ -3,18 +3,18 @@
 # Also implements https://yazi-rs.github.io/docs/quick-start/#shell-wrapper
 
 y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
   if [ "$1" != "" ]; then
     if [ -d "$1" ]; then
-      yazi "$1"  --cwd-file="$tmp
+      yazi "$1"  --cwd-file="$tmp"
     else
-      yazi "$(zoxide query $1)" --cwd-file="$tmp
+      yazi "$(zoxide query $1)" --cwd-file="$tmp"
     fi
   else
-    yazi --cwd-file="$tmp
+    yazi --cwd-file="$tmp"
   fi
-    return $?
   IFS= read -r -d '' cwd < "$tmp"
-	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-	command rm -f -- "$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+  command rm -f -- "$tmp"
+  return $?
 }
