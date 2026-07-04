@@ -1,6 +1,8 @@
-# Yazi & Zoxide & Zsh
+# Yazi & Zoxide & Zsh & Shell Wrapper
 This plugin for [zsh](https://www.zsh.org) adds just one shortcut, but unfolds the magic of both [Zoxide](https://github.com/ajeetdsouza/zoxide) and [yazi](https://github.com/sxyazi/yazi/) 🧙
 Without arguments, `y` just opens yazi. If you supply an argument that is a directory, yazi is opened in that directory. But if you supply anything else as an argument, `zoxide` is called with the argument and `yazi` is opened there. This is the efficiency you always wanted.
+
+This fork also adds the functinality suggested from <https://yazi-rs.github.io/docs/quick-start/#shell-wrapper>
 
 # Installation
 Install the zsh plugin using your favorite plugin manager.
